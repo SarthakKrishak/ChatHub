@@ -1,5 +1,4 @@
-const mongoose = require('mongoose')
-
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
     email: {
@@ -18,10 +17,10 @@ const userSchema = new mongoose.Schema({
     },
     profilePic: {
         type: String,
-        default: ''
+        default:''
     }
-}, { timestamps: true });
+}, { timestamps: true }); // "Created at" and "updated at" are added by using timestamps
 
 const User = mongoose.model("User", userSchema);
 
-module.exports = User;
+export default User;

@@ -1,9 +1,10 @@
-require("dotenv").config();
-const express = require('express');
-const app = express();
-const cookieParser = require('cookie-parser');
-const cors = require("cors");
+import dotenv from "dotenv"
+dotenv.config();
 
+import express from 'express'
+const app = express();
+import cors from 'cors'
+import cookieParser from "cookie-parser";
 
 app.use(cookieParser());
 app.use(express.json({ limit: "50mb" }));
@@ -13,12 +14,9 @@ app.use(cors({
     credentials: true
 }));
 
-
-
-const authRoute = require('./routes/auth.route.js');
-const messageRoute = require("./routes/message.route.js");
-
-const connectDB = require('./db/db.js');
+import authRoute from './routes/auth.route.js'
+import connectDB from './db/db.js'
+import messageRoute from "./routes/message.route.js"
 
 
 app.get("/", (req, res) => {

@@ -1,32 +1,36 @@
-const { generateToken } = require("../utils/util.js");
-const User = require("../models/user.model.js");
-const bcrypt = require('bcryptjs');
-const cloudinary = require('../utils/cloudinary.js')
+import generateToken from "../utils/util.js"
+import User from "../models/user.model.js"
+import bcrypt from "bcryptjs";
+import cloudinary from '../utils/cloudinary.js'
 
-module.exports.signupController = async (req, res) => {
-  const { fullName, email, password } = req.body;
+export const signupController = async (req, res) => {
+  
+  const { fullName, email, password } = req.body; // For this to work we have to use the middleware express.json
+  
     try {
       if (!fullName || !email || !password) {
           return res.status(400).json({ message: "Please fill in all fields" });
         }
-    //hash password
+    //hashing the password
     if (password.length < 6) {
       return res
         .status(400)
         .json({ message: "Password must be at least 6 characters" });
     }
-    const user = await User.findOne({
-      email,
-    });
+      const user = await User.findOne({ email });
+      
     if (user) {
       return res.status(400).json({ message: "Email already exists" });
       }
       
-      const salt = await bcrypt.genSalt(10);
+      const salt = await bcrypt.genSalt(10); //generating the salt
       const hashedPassword = await bcrypt.hash(password, salt);
 
+      // new user created
       const newUser = await User.create({
-          fullName, email, password: hashedPassword
+        fullName,
+        email,
+        password: hashedPassword
       })
 
       if (newUser) {
@@ -45,12 +49,13 @@ module.exports.signupController = async (req, res) => {
 
   } catch (error) {
       console.log("Error in signup controller",error.message);
-      res.status(500).json({ message: "Server error. Please try again later." });
+      res.status(500).json({message: "Server error. Please try again later."});
   }
 };
 
 
-module.exports.loginController = async (req, res) => {
+
+export const loginController = async (req, res) => {
   const { email, password } = req.body;
   try {
     if (!email || !password) {
@@ -82,7 +87,8 @@ module.exports.loginController = async (req, res) => {
 };
 
 
-module.exports.logoutController = (req, res) => {
+
+export const logoutController = (req, res) => {
     try {
       res.cookie('token', "", { maxAge: 0 });
       res.status(200).json({ message: "Logged out successfully" });
@@ -93,7 +99,8 @@ module.exports.logoutController = (req, res) => {
 };
 
 
-module.exports.updateProfile = async(req, res) => {
+
+export const updateProfile = async(req, res) => {
   try {
     const { profilePic } = req.body;
     const userId = req.user._id;
@@ -113,7 +120,7 @@ module.exports.updateProfile = async(req, res) => {
 
 }
 
-module.exports.checkAuth = (req, res) => {
+export const checkAuth = (req, res) => {
   try {
     res.status(200).json(req.user);
   } catch (error) {

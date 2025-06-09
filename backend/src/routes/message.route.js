@@ -1,12 +1,10 @@
-const express = require('express');
-const { isLoggedIn } = require('../middleware/isLoggedIn');
-const { getUsersForSidebar, getMessages, sendMessage } = require('../controllers/message.controller');
-
+import express from "express"
+import { isLoggedIn } from "../middleware/isLoggedIn.js";
+import { getUsersForSidebar,getMessages,sendMessage } from "../controllers/message.controller.js";
 const router = express.Router();
 
 router.get("/users", isLoggedIn, getUsersForSidebar);
 router.get("/:id", isLoggedIn, getMessages);
 router.post("/send/:id", isLoggedIn, sendMessage);
 
-
-module.exports = router;
+export default router

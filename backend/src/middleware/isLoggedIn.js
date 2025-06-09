@@ -1,7 +1,7 @@
-const jwt = require("jsonwebtoken");
-const User = require("../models/user.model");
+import jwt from "jsonwebtoken";
+import User from "../models/user.model.js";
 
-module.exports.isLoggedIn = async (req, res, next) => {
+export const isLoggedIn = async (req, res, next) => {
     try {
         // Extract token from cookies or authorization header
         const token = req.cookies.token || req.headers['authorization']?.split(' ')[1];
