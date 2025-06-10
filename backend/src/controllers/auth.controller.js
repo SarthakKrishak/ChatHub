@@ -119,7 +119,7 @@ export const updateProfile = async(req, res) => {
     res.status(200).json({ message: "Profile updated successfully", updatedUser });
 
   } catch (error) {
-    console.log("Error in update profile controller", error.message);
+    console.log("Error in update profile controller", error);
     res.status(500).json({ message: "Server error. Please try again late" });
   }
 
