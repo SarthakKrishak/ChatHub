@@ -8,7 +8,7 @@ import {
   checkAuth
 } from "../controllers/auth.controller.js"
 
-import { isLoggedIn } from "../middleware/isLoggedIn.js";
+import { isLoggedIn } from "../middleware/isLoggedIn.middleware.js";
 router.post("/signup", signupController);
 router.post("/login", loginController);
 router.post("/logout", logoutController);
