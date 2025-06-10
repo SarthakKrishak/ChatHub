@@ -1,4 +1,3 @@
-import React from 'react'
 import { useThemeStore } from '../store/useThemeStore';
 import { THEMES } from '../constants/index';
 import { Send } from "lucide-react";
