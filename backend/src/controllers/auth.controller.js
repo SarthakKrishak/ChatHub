@@ -35,7 +35,10 @@ export const signupController = async (req, res) => {
 
       if (newUser) {
           //generate JWT token
-          generateToken(newUser._id, res);
+        generateToken(newUser._id, res);
+        await newUser.save();
+        console.log("Hashed Password",hashedPassword);
+        
           return res.status(201).json({
               message: "User created successfully",
               _id: newUser._id,
