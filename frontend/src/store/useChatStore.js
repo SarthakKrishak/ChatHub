@@ -4,20 +4,20 @@ import { axiosInstance } from "../lib/axios";
 
 export const useChatStore = create((set) => ({
     messages: [],
-    users: [], // ✅ Ensure users is initialized as an empty array
+    users: [],
     selectedUser: null,
-    isUserLoading: false,
-    isMessageLoading: false,
+    isUsersLoading: false,
+    isMessagesLoading: false,
 
-    getUser: async () => {
-        set({ isUserLoading: true });
+    getUsers: async () => {
+        set({ isUsersLoading: true });
         try {
             const res = await axiosInstance.get("/messages/users");
-            set({ users: Array.isArray(res.data) ? res.data : [] }); // ✅ Ensure response is an array
+            set({ users: res.data });
         } catch (error) {
-            toast.error(error.response?.data?.message || "Failed to load users"); // ✅ Correct error handling
+            toast.error(error.response.data.message);
         } finally {
-            set({ isUserLoading: false });
+            set({ isUsersLoading: false });
         }
     },
 
@@ -34,6 +34,5 @@ export const useChatStore = create((set) => ({
     },
 
     //Todo : Optimise this later
-
-    setSelectUser: (selectedUser) => set({ selectedUser }),
+    setSelectedUser: (selectedUser) => set({ selectedUser }),
 }));
