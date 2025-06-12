@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAuthStore } from '../store/useAuthStore'
 import { Link } from "react-router-dom";
-import { LogOut, MessageSquare, Settings, User } from "lucide-react";
+import { LogOut, MessageSquare, Settings, Github, User } from "lucide-react";
 
 const Navbar = () => {
 
@@ -17,13 +17,24 @@ const Navbar = () => {
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-2.5 hover:opacity-80 transition-all">
               <div className="size-9 rounded-lg bg-primary/10 flex items-center justify-center">
-                <MessageSquare className="size-5 text-primary" />
+                <img src="/image1.png" alt="logo" className='rounded-lg' />
               </div>
               <h1 className="text-lg font-bold">ChatHub</h1>
             </Link>
           </div>
 
           <div className="flex items-center gap-2">
+            <a
+              href=''
+              target='_blank'
+              className={`
+              btn btn-sm gap-2 transition-colors
+              
+              `}
+            >
+              <Github className="size-4" />
+            </a>
+
             <Link
               to={"/settings"}
               className={`
@@ -34,6 +45,8 @@ const Navbar = () => {
               <Settings className="size-4" />
               <span className="hidden sm:inline">Settings</span>
             </Link>
+
+
 
             {authUser && (
               <>
