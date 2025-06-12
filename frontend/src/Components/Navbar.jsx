@@ -25,7 +25,7 @@ const Navbar = () => {
 
           <div className="flex items-center gap-2">
             <a
-              href=''
+              href='https://github.com/SarthakKrishak/ChatHub'
               target='_blank'
               className={`
               btn btn-sm gap-2 transition-colors
