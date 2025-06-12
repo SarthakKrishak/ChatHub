@@ -32,9 +32,9 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2">
+    <div className="min-h-screen grid lg:grid-cols-2 lg:space-y-16 overflow-hidden">
       {/* left side form */}
-      <div className="flex flex-col justify-center items-center p-6 sm:p-12">
+      <div className="flex flex-col justify-center items-center p-6 sm:p-12 lg:mt-9 lg:mb-[-5vh]">
         <div className="w-full max-w-md space-y-8">
           {/* LOGO */}
           <div className="text-center mb-8">
@@ -95,7 +95,7 @@ const SignupPage = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   className="input input-bordered w-full pl-10"
-                  placeholder="••••••••"
+                  placeholder="Create your password"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 />
@@ -126,7 +126,7 @@ const SignupPage = () => {
           </form>
 
           <div className="text-center">
-            <p className="text-base-content/60">
+            <p className="text-base-content/60 lg:mt-[-1vh]">
               Already have an account?{" "}
               <Link to="/login" className="link link-primary">
                 Sign in
