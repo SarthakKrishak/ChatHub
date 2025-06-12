@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="/image1.png" alt="ChatHub Logo" width="100" />
+</p>
+
 # ChatHub 🟢
 
 **ChatHub** is a modern, anonymous chat web app that lets users instantly connect and chat with anyone else who is logged in — no need to know them, follow them, or share personal details.
