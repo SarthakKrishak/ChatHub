@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
   <img src="./frontend/public/image1.png" alt="ChatHub Logo" width="100" />
 </p>
 
