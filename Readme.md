@@ -94,38 +94,15 @@ npm run dev
 
 ```bash
 cd backend
+```
+
+```bash
+npm i
+```
+
+```bash
 node index.js
 ```
 
-The frontend will typically run on [http://localhost:5173](http://localhost:5173) and the backend on [http://localhost:5000](http://localhost:5000) (or as configured).
 
----
 
-## Project Structure
-
-```
-ChatHub/
-├── backend/         # Express.js backend (API, Socket.IO, JWT)
-├── frontend/        # React frontend (UI, Tailwind CSS)
-├── Readme.md
-└── ...
-```
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## Acknowledgements
-
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
-- [Socket.IO](https://socket.io/)
-- [JWT](https://jwt.io/)
-
----
