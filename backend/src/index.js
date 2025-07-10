@@ -21,10 +21,6 @@ app.use(cors({
 
 const __dirname = path.resolve();
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-})
-
 app.use("/api/auth", authRoute);
 app.use("/api/messages", messageRoute);
 
