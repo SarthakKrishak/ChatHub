@@ -2,10 +2,12 @@ import dotenv from "dotenv"
 dotenv.config();
 
 import express from 'express'
-
-const app = express();
 import cors from 'cors'
 import cookieParser from "cookie-parser";
+import { app, server } from "./utils/socket.js";
+import authRoute from './routes/auth.route.js'
+import connectDB from './db/db.js'
+import messageRoute from "./routes/message.route.js"
 
 app.use(cookieParser());
 app.use(express.json({ limit: "50mb" }));
@@ -15,11 +17,6 @@ app.use(cors({
     credentials: true
 }));
 
-import authRoute from './routes/auth.route.js'
-import connectDB from './db/db.js'
-import messageRoute from "./routes/message.route.js"
-
-
 app.get("/", (req, res) => {
     res.send("Hello World!");
 })
@@ -27,7 +24,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoute);
 app.use("/api/messages", messageRoute);
 
-app.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, () => {
     console.log(`Server is running at ${process.env.PORT}`);
     connectDB();
 })

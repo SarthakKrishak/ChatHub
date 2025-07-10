@@ -1,66 +1,131 @@
-<p align="left">
+<p align="center">
   <img src="./frontend/public/image1.png" alt="ChatHub Logo" width="100" />
 </p>
 
-# ChatHub 🟢
+# ChatHub
 
-**ChatHub** is a modern, anonymous chat web app that lets users instantly connect and chat with anyone else who is logged in — no need to know them, follow them, or share personal details.
+**ChatHub** is a modern, real-time chat application designed for seamless, anonymous communication. Instantly connect and chat with anyone online—no prior connections, no personal details required.
 
-## 🚀 Features
+---
 
-- 🔐 Anonymous real-time chat
-- 💬 Clean and elegant user interface
-- 👤 Automatic detection of online users
-- ⚡ Built with performance and simplicity in mind
+## Table of Contents
 
-## 🛠 Tech Stack
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [How It Works](#how-it-works)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Project Structure](#project-structure)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Real-Time Messaging**: Socket.IO
-- **Authentication**: JWT
+---
 
-## 💡 How it Works
+## Features
 
-Once a user logs in, they are visible to others who are also online. Any user can initiate a chat with another online user—no prior connection required. All conversations remain anonymous unless users choose to share details.
+- **Anonymous Real-Time Chat:** Connect and chat instantly with any online user, maintaining privacy and anonymity.
+- **Modern User Interface:** Clean, responsive, and intuitive UI built with React and Tailwind CSS.
+- **Online User Detection:** Automatically displays users who are currently online.
+- **High Performance:** Optimized for speed and simplicity.
+- **Secure Authentication:** User sessions managed with JWT for secure access.
 
-## 📁 Setup
+---
 
-```bash
-git clone https://github.com/SarthakKrishak/ChatHub.git
-```
+## Tech Stack
 
-```bash
-cd chathub
-```
+- **Frontend:** React, Tailwind CSS
+- **Backend:** Node.js, Express.js
+- **Real-Time Messaging:** Socket.IO
+- **Authentication:** JSON Web Tokens (JWT)
 
-## 📁 Frontend Setup
+---
+
+## How It Works
+
+Upon logging in, users become visible to others who are online. Any user can initiate a chat with another online user—no need for prior connections or sharing of personal information. All conversations remain anonymous unless users choose to disclose their details.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v14 or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- Git
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/SarthakKrishak/ChatHub.git
+   cd ChatHub
+   ```
+
+2. **Install dependencies for both frontend and backend:**
+
+   **Frontend:**
+
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+   **Backend:**
+
+   ```bash
+   cd ../backend
+   npm install
+   ```
+
+### Running the Application
+
+**Start the Frontend:**
 
 ```bash
 cd frontend
-```
-
-```bash
-npm i
-```
-
-```bash
 npm run dev
 ```
 
-## 📁 Backend Setup
+**Start the Backend:**
 
 ```bash
 cd backend
-```
-
-```bash
-npm i
-```
-
-```bash
 node index.js
 ```
 
+The frontend will typically run on [http://localhost:5173](http://localhost:5173) and the backend on [http://localhost:5000](http://localhost:5000) (or as configured).
 
+---
 
+## Project Structure
+
+```
+ChatHub/
+├── backend/         # Express.js backend (API, Socket.IO, JWT)
+├── frontend/        # React frontend (UI, Tailwind CSS)
+├── Readme.md
+└── ...
+```
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Acknowledgements
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+- [Socket.IO](https://socket.io/)
+- [JWT](https://jwt.io/)
+
+---
